@@ -1,0 +1,769 @@
+/* ---------- Tira de estatísticas (hero) ---------- */
+
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.stat {
+  background: var(--bg-surface);
+  padding: 22px 24px;
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.stat__value--accent {
+  color: var(--accent);
+}
+
+.stat__label {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Botões ---------- */
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.12s ease, border-color 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--primary:hover {
+  background: var(--accent-dim);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.btn--ghost:hover {
+  background: var(--bg-surface-2);
+}
+
+.btn--danger {
+  background: transparent;
+  color: var(--heat);
+  border-color: var(--heat-dim);
+}
+
+.btn--danger:hover {
+  background: rgba(255, 93, 58, 0.1);
+}
+
+.btn--small {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Formulário ---------- */
+
+.form-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-grid--full {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.field label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: var(--font-body);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+
+.icon-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.icon-btn--danger:hover {
+  color: var(--heat);
+  border-color: var(--heat-dim);
+}
+
+.empty-state {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.empty-state__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+/* ---------- Painel / gráfico ---------- */
+
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.panel__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.panel__subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0 0 20px;
+}
+
+/* ---------- Alertas ---------- */
+
+.alert {
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.alert--error {
+  background: rgba(255, 93, 58, 0.08);
+  border: 1px solid var(--heat-dim);
+  color: #ffb2a0;
+}
+
+.alert--info {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+/* ---------- Chips de grupo muscular (busca de exercícios) ---------- */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-surface-2);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.chip:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.chip--active {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  max-width: 480px;
+}
+
+.search-row input {
+  flex: 1;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.exercise-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-card__image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: var(--bg-surface-2);
+  display: block;
+}
+
+.exercise-card__image--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.exercise-card__body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.exercise-card__name {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.exercise-card__meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--bg-surface-2);
+  color: var(--text-secondary);
+  width: fit-content;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  padding: 24px 0;
+}
+
+@media (max-width: 720px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Utilitários ---------- */
+
+.muted {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 16px;
+}
+
+.section-head .panel__title {
+  margin: 0;
+}
+
+.icon-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ---------- Painéis do dashboard ---------- */
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.panel-grid .panel {
+  margin-bottom: 0;
+}
+
+.panel--wide {
+  grid-column: 1 / -1;
+}
+
+.select-inline {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  min-width: 220px;
+}
+
+.evolution__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.evolution__delta {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.evolution__delta--up {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Barras horizontais de equilíbrio muscular */
+.balance {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.balance__row {
+  display: grid;
+  grid-template-columns: 96px 1fr 40px;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.balance__label--zero {
+  color: var(--text-muted);
+}
+
+.balance__track {
+  height: 10px;
+  background: var(--bg-surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.balance__bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.balance__value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+/* ---------- Histórico de treinos (sessões expansíveis) ---------- */
+
+.sessions {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+
+.session + .session {
+  border-top: 1px solid var(--border-soft);
+}
+
+.session__summary {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 110px 1fr 110px 90px 110px 20px;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.session__summary:hover,
+.session--open .session__summary {
+  background: var(--bg-surface-2);
+}
+
+.session__date {
+  display: flex;
+  flex-direction: column;
+  font-variant-numeric: tabular-nums;
+}
+
+.session__weekday {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.session__main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.session__name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.session__groups {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.session__metric {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.session__metric strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.session__chevron {
+  font-size: 20px;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+}
+
+.session--open .session__chevron {
+  transform: rotate(90deg);
+}
+
+.session__detail {
+  padding: 4px 20px 20px;
+  background: var(--bg-surface-2);
+}
+
+.sets {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.sets th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sets td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.sets__name {
+  font-weight: 600;
+}
+
+.session__notes {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.session__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Formulário de treino ---------- */
+
+.workout-form {
+  max-width: 1040px;
+}
+
+.workout-form .form-card {
+  margin-bottom: 28px;
+}
+
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exercise-row {
+  display: grid;
+  grid-template-columns: 28px 2fr 1.2fr 80px 80px 100px auto;
+  gap: 12px;
+  align-items: end;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.exercise-row__index {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-muted);
+  align-self: center;
+  padding-top: 18px;
+}
+
+.exercise-row__tools {
+  display: flex;
+  gap: 4px;
+  padding-bottom: 5px;
+}
+
+.add-row {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.add-row:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.form-footer__totals {
+  display: flex;
+  gap: 24px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.form-footer__totals strong {
+  color: var(--text-primary);
+}
+
+.form-footer .form-actions {
+  margin-top: 0;
+}
+
+/* ---------- Barra do treino em montagem (banco de exercícios) ---------- */
+
+.draft-bar {
+  position: sticky;
+  bottom: 20px;
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px 12px 20px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  max-width: 560px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 1000px) {
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+  .session__summary {
+    grid-template-columns: 90px 1fr 20px;
+  }
+  .session__metric {
+    display: none;
+  }
+  .exercise-row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .exercise-row__index {
+    display: none;
+  }
+  .exercise-row__name {
+    grid-column: 1 / -1;
+  }
+  .exercise-row__tools {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 720px) {
+  .main__header--row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sets th:nth-child(2),
+  .sets td:nth-child(2),
+  .sets th:nth-child(5),
+  .sets td:nth-child(5) {
+    display: none;
+  }
+}
+
+.field input,
+.field select {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 720px) {
+  .exercise-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .exercise-row__name,
+  .exercise-row .field:nth-of-type(2) {
+    grid-column: 1 / -1;
+  }
+}
