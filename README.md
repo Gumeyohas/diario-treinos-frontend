@@ -5,11 +5,11 @@ evolução: carga por exercício, volume semanal e equilíbrio entre grupos
 musculares.
 
 Este repositório é o componente **Interface (Front-End)** do MVP de
-Componentização de Sistemas (pós-graduação em Engenharia de Software,
+Arquitetura de Software (pós-graduação em Engenharia de Software,
 PUC-Rio), no **Cenário 1**: Interface (Front-End) ↔ API (Back-End) ↔
 SQLite, com a Interface consumindo também uma API externa de exercícios.
 
-Repositório irmão (Back-End): `treino-api`.
+Repositório irmão (Back-End): https://github.com/Gumeyohas/diario-treinos-api
 
 ## Arquitetura
 
@@ -17,7 +17,7 @@ Repositório irmão (Back-End): `treino-api`.
 
 A Interface, em **React (Vite)**, conversa com:
 
-1. A **API própria** (`treino-api`, FastAPI + SQLite): criar, listar, editar e
+1. A **API própria** (`diario-treinos-api`, FastAPI + SQLite): criar, listar, editar e
    excluir treinos, além das consultas de resumo semanal e evolução.
 2. A **API externa wger**: busca de exercícios para montar o treino.
 
@@ -71,20 +71,20 @@ está progredindo. O app responde:
 Pré-requisito: **Node.js 20.19+ ou 22+** (o Vite 8 não roda em versões anteriores).
 
 ```bash
-git clone (https://github.com/Gumeyohas/diario-treinos-frontend.git)
-cd treino-frontend
+git clone https://github.com/Gumeyohas/diario-treinos-frontend.git
+cd diario-treinos-frontend
 npm install
 cp .env.example .env     # ajuste VITE_API_URL se a API não estiver em localhost:8000
 npm run dev
 ```
 
-Acesse `http://localhost:5173`. A API (`treino-api`) precisa estar rodando.
+Acesse `http://localhost:5173`. A API ([diario-treinos-api](https://github.com/Gumeyohas/diario-treinos-api)) precisa estar rodando.
 
 ## Execução com Docker
 
 ```bash
-docker build -t treino-frontend --build-arg VITE_API_URL=http://localhost:8000 .
-docker run -p 5173:80 treino-frontend
+docker build -t diario-treinos-frontend --build-arg VITE_API_URL=http://localhost:8000 .
+docker run -p 5173:80 diario-treinos-frontend
 ```
 
 Acesse `http://localhost:5173`.
@@ -92,7 +92,7 @@ Acesse `http://localhost:5173`.
 ## Estrutura do projeto
 
 ```
-treino-frontend/
+diario-treinos-frontend/
 ├── src/
 │   ├── main.jsx                   # Entrada: router, provider do rascunho e estilos
 │   ├── App.jsx                    # Layout e rotas
